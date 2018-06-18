@@ -1,7 +1,7 @@
 module.exports = m => {
   const d = new Date
-  console.log(m)
-  console.log(`${d.getUTCFullYear()}.${
+  console.log(`${
+    d.getUTCFullYear()}.${
     d.getUTCMonth()}.${
     d.getUTCDate()}-${
     d.getUTCHours()}:${
