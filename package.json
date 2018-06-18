@@ -4,7 +4,7 @@
   "description": "Discord assistant for better functions ",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-modules src/index.mjs"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
