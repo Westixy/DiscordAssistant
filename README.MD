@@ -1,6 +1,9 @@
 # DiscordAssistant
 
+Self-bot are [forbidden](https://support.discordapp.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-) from discord so be careful using this, thats not my issue.
+
 ## Getting started
 
-- `npm i -D`
-- `npm start`
+- `npm i`
+- `node src/index.js`
+
