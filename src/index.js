@@ -6,21 +6,13 @@ const mods = [
   require('./mods/reference'),
   require('./mods/evaluator')
 ]
+const logger = require('./mods/evaluator')
 const bot = new Discord.Client
 
 bot.on('ready', () => console.log('bot:main', 'Bot ready'))
 
 bot.on('message', m => {
-  console.log(`${
-    m.guild
-      ? m.guild.name
-      : 'MP'}:${
-    m.channel.type !== 'dm'
-      ? m.channel.name
-      : m.channel.recipient.username}:${
-    m.member
-      ? m.member.displayName
-      : m.author.username} > ${m.content}`)
+  logger(m)
   if (m.author.tag !== m.client.user.tag) return
   for (const mod of mods) mod(m)
 })
