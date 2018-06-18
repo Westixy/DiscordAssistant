@@ -6,7 +6,7 @@ const mods = [
   require('./mods/reference'),
   require('./mods/evaluator')
 ]
-const logger = require('./mods/evaluator')
+const logger = require('./logger')
 const bot = new Discord.Client
 
 bot.on('ready', () => console.log('bot:main', 'Bot ready'))
