@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 dotenv.config()
 
 const mods = [
-  require('./commands/reference'),
-  require('./commands/evaluator')
+  require('./mods/reference'),
+  require('./mods/evaluator')
 ]
 const bot = new Discord.Client
 
