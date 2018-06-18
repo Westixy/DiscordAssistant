@@ -4,7 +4,7 @@ module.exports = m => {
   const s = n => String(n).slice(2, 4)
   console.log(`${
     s(d.getUTCFullYear())}/${
-    p(d.getUTCMonth())}/${
+    p(d.getUTCMonth()+1)}/${
     p(d.getUTCDate())} ${
     p(d.getUTCHours())}:${
     p(d.getUTCMinutes())} ${
