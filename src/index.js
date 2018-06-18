@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 dotenv.config()
 
 const reference = require('./commands/reference')
+const evaluator = require('./commands/evaluator')
 
 const bot = new Discord.Client
 
@@ -12,6 +13,7 @@ bot.on('message', m => console.log(`${m.guild.name}:${m.channel.name}:${m.member
 bot.on('message', m => {
   if (m.author.tag !== m.guild.me.user.tag) return
   reference(m)
+  evaluator(m)
 })
 
 process.on('SIGINT', bot.destroy.bind(bot))
