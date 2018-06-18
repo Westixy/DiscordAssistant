@@ -2,13 +2,15 @@ const dotenv = require('dotenv')
 const Discord = require('discord.js')
 dotenv.config()
 
-const reference = require('./commands/reference')
-const evaluator = require('./commands/evaluator')
-
+const mods = [
+  require('./commands/reference'),
+  require('./commands/evaluator')
+]
 const bot = new Discord.Client
 
 bot.on('ready', () => console.log('bot:main', 'Bot ready'))
-bot.on('message', m =>
+
+bot.on('message', m => {
   console.log(`${
     m.guild
       ? m.guild.name
@@ -18,12 +20,9 @@ bot.on('message', m =>
       : m.channel.recipient.username}:${
     m.member
       ? m.member.displayName
-      : m.author.username} > ${m.content}`))
-
-bot.on('message', m => {
+      : m.author.username} > ${m.content}`)
   if (m.author.tag !== m.client.user.tag) return
-  reference(m)
-  evaluator(m)
+  for (const mod of mods) mod(m)
 })
 
 process.on('SIGINT', bot.destroy.bind(bot))
